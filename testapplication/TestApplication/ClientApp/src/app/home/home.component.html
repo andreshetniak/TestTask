@@ -1,0 +1,26 @@
+<h1 id="tableLabel">Users</h1>
+
+<p>This component demonstrates users data from the server.</p>
+
+<p *ngIf="!users"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="users">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Activity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>
+        <input type="checkbox" [checked]="user.active" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
